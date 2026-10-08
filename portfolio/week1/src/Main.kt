@@ -1,25 +1,20 @@
 // COMP2850 Portfolio: Week 1
-// Program to compute area of a triangle
+// Program to compute area of a triangle 
+mport kotlin.math.sqrt
+import kotlin.system.exitProcess
 
-import the Kotlin sqrt function
+fun main(args: Array<String>) {
+    if (args.size < 3) {
+        println("Error: values for a, b, c required on command line")
+        exitProcess(1)
+    }
 
-main receives command-line arguments
+    val a = args[0].toDouble()
+    val b = args[1].toDouble()
+    val c = args[2].toDouble()
 
-    if there are fewer than 3 arguments:
-        print:
-        Error: values for a, b, c required on command line
-        terminate with exit status 1
+    val s = (a + b + c) / 2
+    val area = sqrt(s * (s - a) * (s - b) * (s - c))
 
-    otherwise:
-        convert argument 0 to Double → a
-        convert argument 1 to Double → b
-        convert argument 2 to Double → c
-
-        calculate:
-            s = (a + b + c) / 2
-
-        calculate:
-            area = sqrt(s * (s - a) * (s - b) * (s - c))
-
-        print:
-            Area = [area formatted to 5 decimal places]
+    println("Area = %.5f".format(area))
+}
