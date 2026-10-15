@@ -1,4 +1,3 @@
-
 fun isValidTriangle(triangle: Triangle): Boolean {
     val (a, b, c) = triangle
 
@@ -12,7 +11,5 @@ fun triangleArea(triangle: Triangle): Double {
     val (a, b, c) = triangle
     val s = (a + b + c) / 2.0
 
-    return kotlin.math.sqrt(
-        s * (s - a) * (s - b) * (s - c)
-    )
+    return sqrt(s * (s - a) * (s - b) * (s - c))
 }
